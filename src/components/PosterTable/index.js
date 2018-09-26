@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import moviePosters from '../../moviePosters.json';
 import Poster from '../Poster';
 import Marquee from '../Marquee';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+ReactDOM.render(<Router basename={process.env.PUBLIC_URL}>< App />
+</Router>, document.getElementById('root'));
 
 class PosterTable extends Component {
 
@@ -56,7 +60,7 @@ class PosterTable extends Component {
         
         if (this.state.clicked.indexOf(id) === -1) {
             this.scoring();
-            this.setState({ clicked: this.state.clicked.concat(id) });
+            this.setState({ clicked: this.state.clicked.concat(id) })
         } else {
             if (this.state.score === 11) {
                 this.setState({
